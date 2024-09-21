@@ -6,6 +6,16 @@ export const registerAPI = async(user)=>{
     return await commonAPI("POST",`${BASE_URL}/users/register`,user,"")
 }
 
+// verify otp
+export const otpVerifyAPI = async(email,otp)=>{
+    return await commonAPI("POST",`${BASE_URL}/verify-otp`,{email,otp},"")
+}
+
+// resend otp
+export const resendotpAPI = async(email)=>{
+    return await commonAPI("POST",`${BASE_URL}/verify-otp`,{email},"")
+}
+
 // login
 export const loginAPI = async(user)=>{
     return await commonAPI("POST",`${BASE_URL}/users/login`,user,"")
